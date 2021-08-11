@@ -1,0 +1,439 @@
+/* import fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+/* add some default styling to entire page */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+body {
+    background-color: #000000;
+    font-family: 'Poppins', sans-serif;
+}
+/* style header section */
+header {
+    /* set z position to fixed so it sticks to the top, set z index to 1 so it layers on top of other elements if you scroll down */
+    position: fixed;
+    width: 100%;
+    padding: 15px;
+    background-color: #000;
+    z-index: 1;
+}
+
+.header-container{
+    /* set max width on container instead of main header, so background color is still black for 100% width of the page, but text is limited to 1600px wide, center with margin: auto; */
+    max-width: 1600px;
+    padding-right: 40px;
+    margin: auto;
+}
+
+header .header-container {
+    /* set display to flex for positioning/alignment purposes */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+header h1 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 35px;
+    font-weight: 600;
+    color: #ffff;
+}
+
+header nav li{
+    /* remove list styling so it appears as plain text, set display to inline block so elements stay inline, but padding and margin is respected */
+    list-style-type: none;
+    display: inline-block;
+}
+
+header nav li a {
+    /* set cursor to pointer to indicate it's a link when you hover over it */
+    color: #ffff;
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    padding: 15px;
+    cursor: pointer;
+}
+/* style header image */
+.header-img {
+    height: 500px;
+    width: 100%;
+    margin-bottom: 25px;
+    background-image: url(../images/Website\ Banner\ 4.png);
+    background-position: center;
+}
+/* style about me section */
+.about-me-container, .contact-me-container {
+    /* use position: relative; and top: 40px; to position section 40px down */
+    position: relative;
+    margin: auto;
+    top: 40px;
+    width: 90%;
+    color: #ffff;
+    border-left: 2px solid #cac5c5;
+    padding: 15px;
+}
+
+.about-me h2, .contact-me h2 {
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 10px 5px 10px;
+    font-size: 32px;
+}
+
+.about-me img {
+    height: 300px;
+    width: 300px;
+    float: left;
+    margin: 15px 15px 0px 15px;
+}
+
+.about-me p {
+    font-size: 24px;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    word-spacing: 2px;
+    line-height: 30px;
+    margin-top: 10px;
+}
+
+.work-container {
+    /* set max width to 1000px so that elements wrap when at full screen */
+    position: relative;
+    max-width: 1000px;
+    top: 75px;
+    left: 95px;
+    border-left: 2px solid #ffffff; 
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.work .work-container{
+    /* use flex-wrap: wrap; so that images will move down if they exceed 1000px width limit */
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.work h2 {
+    font-family: 'Montserrat', sans-serif;
+    color: #ffffff;
+    padding: 10px;
+    font-size: 32px;
+}
+/* style work images */
+.thumbnail-container-1 {
+    max-height: 380px;
+}
+
+#cocktail-database-thumbnail {
+    height: 380px;
+    width: 900px;
+    margin: 25px, 25px, 0px, 0px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.thumbnail-container {
+    max-height: 190px;
+}
+
+.work-thumbnails {
+    opacity: 0.7;
+    height: 190px;
+    width: 447px;
+    margin-right: 5px;
+    padding: 10px;
+    cursor: pointer;
+}
+.work-thumbnails:hover {
+    opacity: 1;
+}
+/* style title cards for work images */
+.work h3 {
+    position: relative;
+    text-align: center;
+    color: #000;
+    background-color: rgb(202, 200, 200);
+    font-family: 'Montserrat', sans-serif;
+    font-size: 25px;
+    word-spacing: 8px;
+    padding: 5px;
+    height: 70px;
+    max-width: 150px;
+    bottom: 83px;
+    left: 10px;
+}
+/* add padding and margin to contact me section, other styling effects were the same as about me section, so I just added contact me section selectors to about me section stylings */
+.contact-me {
+    margin: 70px 0px 100px 0px;
+}
+
+.contact-me-container {
+    padding: 30px 30px 30px 15px;
+}
+
+.contact-me h2 {
+    padding: 10px 10px 20px 10px;
+}
+
+.contact-me a {
+    color:#ffffff;
+    text-decoration: underline;
+    font-size: 18px;
+    font-family: 'Poppins', sans-serif;
+    padding: 10px;
+    margin-top: 5px;
+}
+/* style footer */
+footer {
+    /* set display to flex in order to center text both vertically and horizontally using align-items and justify-content */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgb(32, 32, 32);
+    margin-top: 100px;
+    height: 100px;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    color: #ffff;
+    text-align: center;
+    font-size: small;
+}
+
+/* add styling adjustments for smaller screens */
+@media screen and (max-width: 1900px) {
+    /* because of the way I positioned the work section I kept running into this issue where it would look good at full screen, but get pushed to the right when screen size shrank. Couldn't figure out a good way to reposition it, so just decided to use margin: auto; to center it instead */
+    .work {
+        max-width: 100%;
+    }
+    
+    
+    .work-container {
+        margin: auto;
+        border: none;
+    }
+}
+
+@media screen and (max-width: 1299px) {
+    .contact-me a {
+        display: flex;
+        flex-wrap: wrap;
+
+    }
+
+    .work-container {
+        margin: 0;
+        margin-right: auto;
+    }
+    
+}
+
+@media screen and (max-width: 1100px) {
+    .work-container {
+        margin: 0;
+        margin-right: 0;
+        left: 30px;
+    }    
+}
+
+@media screen and (max-width: 992px) {
+    header {
+        padding: 40px;
+        text-align: center;
+        background: #000000;
+        color: #fff;
+    }
+      
+    .header-container {
+          max-width: 100%;
+    }
+
+    header h1 {
+          position: relative;
+          bottom: 10px;
+    }
+
+    nav {
+        position: absolute;
+        display: flex;
+        flex-wrap: wrap;
+        background-color: rgb(32, 32, 32);
+        bottom: 0px;
+        right: 0px;
+        width: 100%;
+        height: 30px;
+        justify-content: flex-end;
+        align-items: center;
+    }
+      
+    nav a {        
+        padding: 14px 20px;
+        text-decoration: none;
+        text-align: center;
+    }
+
+    .header-img {
+          /* set background position to focus on the part of the header image that looked the nicest on a small screen, since screen was no longer wide enough to encompass entire image */
+          background-position-x: -400px;
+    }
+
+    
+    .work-container {
+        max-width: 750px;
+    }
+
+    .thumbnail-container-1 {
+        max-height: 300px;
+    }
+
+    .thumbnail-container {
+        max-height: 150px;
+    }
+
+    #cocktail-database-thumbnail {
+        height: 300px;
+        width: 700px;
+    }
+
+    .work-thumbnails {
+        height: 150px;
+        width: 347px;
+    }
+
+}
+
+@media screen and (max-width: 780px) {
+    .work-container {
+        max-width: 700px;
+    }
+
+    .thumbnail-container-1 {
+        max-height: 270px;
+    }
+
+    .thumbnail-container {
+        max-height: 150px;
+    }
+
+    #cocktail-database-thumbnail{
+        height: 270px;
+        width: 634px;
+    }
+
+    .work-thumbnails{
+        width: 315px;
+    }
+
+    .work h3 {
+        height: 65px;
+        max-width: 150px;
+        bottom: 79px;
+    }
+    
+}
+
+@media screen and (max-width: 730px) {
+    header h1 {
+        right: 30px;
+    }
+    
+}
+
+@media screen and (max-width: 680px) {
+    .work-container {
+        max-width: 650px;
+        left: 10px
+    }
+
+    #cocktail-database-thumbnail {
+        height: 270px;
+        width: 575px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    header nav li a {
+        padding: 8px;
+    }
+
+    .about-me img {
+        margin: 10px;
+    }
+
+    .work-container {
+        max-width: 575px;
+    }
+
+    .thumbnail-container-1 {
+        max-height: 230px;
+    }
+
+    #cocktail-database-thumbnail {
+        height: 230px;
+        width: 500px;
+    }
+
+    .contact-me a {
+        display: flex;
+        flex-wrap: wrap;
+        font-size: 10px;
+
+    } 
+}
+
+@media screen and (max-width: 540px) {
+    .work-container {
+        max-width: 500px;
+    }
+
+    .thumbnail-container-1 {
+        max-height: 215px;
+    }
+
+    #cocktail-database-thumbnail {
+        height: 215px;
+        width: 450px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    nav{
+        justify-content: center;
+    }
+
+    nav ul li a {
+        font-size: 12px;
+    }
+}
+
+@media screen and (max-width: 450px) {
+    header h1 {
+        left: 40px;
+    }
+
+    .work-container {
+        max-width: 350px;
+        
+    }
+
+    .thumbnail-container-1 {
+        max-height: 150px;
+    }
+
+    #cocktail-database-thumbnail {
+        height: 150px;
+        width: 315px;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    header h1 {
+        left: 25px;
+    }
+}

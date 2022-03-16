@@ -1,5 +1,7 @@
 # Josh-Gumperz-Portfolio-Updated-2
-# Josh-Gumperz-Portfolio-Updated
+
+**Please note**
+This portfolio is NOT up to date. You can find an up to date version of my full portfolio here: https://github.com/JoshGumperz/React-Portfolio
 
 The goal of this assignment is to create a portfolio website with some information about myself, as well as a section dedicated to some of the work I've done, and a contact me section with my contact information.
 
